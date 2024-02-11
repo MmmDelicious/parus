@@ -41,7 +41,7 @@ def add_existing_product():
     db.session.add(new_inventory)
     db.session.commit()
 
-    # Если успешно добавили, возвращаем список продуктов и локаций
+
     products_with_inventory = db.session.query(Product, Inventory, Location)\
         .join(Inventory, Product.id == Inventory.product_id)\
         .join(Location, Inventory.location_id == Location.id)\
